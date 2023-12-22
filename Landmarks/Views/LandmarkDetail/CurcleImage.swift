@@ -1,12 +1,14 @@
-//  ImageApple.swift
+//  CurcleImage.swift
 //  Landmarks
 //  Created by Adam West on 21.12.2023.
 
 import SwiftUI
 
-struct ImageApple: View {
+struct CurcleImage: View {
+    var image: Image
+    
     var body: some View {
-        Image("turtlerock")
+        image
             .clipShape(Circle())
             .overlay {
                 Circle().stroke(.white, lineWidth: 4)
@@ -16,5 +18,5 @@ struct ImageApple: View {
 }
 
 #Preview {
-    ImageApple()
+    CurcleImage(image: Image("icybay"))
 }
