@@ -13,13 +13,20 @@ struct LandmarkRow: View {
                 .resizable()
                 .frame(width: 50, height: 50)
             Text(landmark.name)
+            
             Spacer()
-        }.padding(.leading, 20)
+            
+            if landmark.isFavorite {
+                Image(systemName: "star.fill")
+                    .foregroundStyle(.yellow)
+            }
+        }
+        .padding()
     }
 }
    
 #Preview("Salmon") {
-    LandmarkRow(landmark: landmarks[1])
+    LandmarkRow(landmark: ModelData().landmarks[0])
 }
 
 //#Preview("Turtle Rock") { // Можно указывать названия превью

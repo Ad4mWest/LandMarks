@@ -6,6 +6,10 @@ import SwiftUI
 import MapKit
 
 struct LandmarkDetail: View {
+    @Environment(ModelData.self) var modelData
+    
+    var landmark: Landmark
+    
     var image: Image
     var coordinate: CLLocationCoordinate2D
     var textTitleModel: TextTitleModel
@@ -18,18 +22,22 @@ struct LandmarkDetail: View {
             CurcleImage(image: image)
                 .offset(y: -130)
                 .padding(.bottom, -130)
-            VStack(spacing: -10) {
-                TextTitle(textTitleModel: textTitleModel)
-                Divider()
-                TextSubtitle(textSubtitleModel: textSubtitleModel)
-            }
+           
+                VStack(spacing: -10) {
+                    TextTitle(landmark: landmark, textTitleModel: textTitleModel)
+                    Divider()
+                    TextSubtitle(textSubtitleModel: textSubtitleModel)
+                }
         }
         .navigationBarTitleDisplayMode(.inline)
     }
 }
 
 #Preview {
-    LandmarkDetail(
+    let modelData = ModelData()
+    
+    return LandmarkDetail(
+        landmark: ModelData().landmarks[0],
         image: Image("turtlerock"),
         coordinate: CLLocationCoordinate2D(latitude: 34.011_286, longitude: -116.166_868),
         textTitleModel: TextTitleModel(
@@ -40,4 +48,5 @@ struct LandmarkDetail: View {
                     name: "Adam",
                     description: "Descriptive text goes here.")
     )
+    .environment(modelData)
 }
