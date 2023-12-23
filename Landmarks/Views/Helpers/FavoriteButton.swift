@@ -1,9 +1,6 @@
-//
 //  FavoriteButton.swift
 //  Landmarks
-//
 //  Created by Adam West on 23.12.2023.
-//
 
 import SwiftUI
 
