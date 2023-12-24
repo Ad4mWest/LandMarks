@@ -43,21 +43,11 @@ struct LandmarkList: View {
             .navigationTitle("Landmarks")
         } detail: {
             Text("Select a Landmark")
-        }.animation(.default)
+        }
     }
 }
 
 #Preview {
-    let modelData = ModelData()
-    
-    return LandmarkList()
-        .environment(modelData)
+    LandmarkList()
+        .environment(ModelData())
 }
-
-//        List(landmarks, id: \.id) { landmark in // Если модель не Identifieble можно указать ее параметр который соответсвует протоколу и итерирровать
-//            LandmarkRow(landmark: landmark)
-//        }
-//        List { // Можно создать список и туда помещать элементы
-//           LandmarkRow(landmark: landmarks[0])
-//           LandmarkRow(landmark: landmarks[1])
-//        }
