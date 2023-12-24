@@ -5,6 +5,7 @@
 import SwiftUI
 
 struct HikeDetail: View {
+    // MARK: Public Properties
     let hike: Hike
     @State var dataToShow = \Hike.Observation.elevation
 
@@ -14,6 +15,7 @@ struct HikeDetail: View {
         ("Pace", \Hike.Observation.pace)
     ]
 
+    // MARK: Lifecycle
     var body: some View {
         VStack {
             HikeGraph(hike: hike, path: dataToShow)

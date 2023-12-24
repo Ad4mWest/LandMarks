@@ -5,6 +5,7 @@
 import SwiftUI
 
 extension Animation {
+    // MARK: Ripple Animation
     static func ripple(index: Int) -> Animation {
         Animation.spring(dampingFraction: 0.5)
             .speed(2)
@@ -14,6 +15,7 @@ extension Animation {
 }
 
 struct HikeGraph: View {
+    // MARK: Public Properties
     var hike: Hike
     var path: KeyPath<Hike.Observation, Range<Double>>
 
@@ -29,7 +31,8 @@ struct HikeGraph: View {
             return .black
         }
     }
-
+    
+    // MARK: Lifecycle
     var body: some View {
         let data = hike.observations
         let overallRange = rangeOfRanges(data.lazy.map { $0[keyPath: path] })
@@ -54,6 +57,7 @@ struct HikeGraph: View {
     }
 }
 
+// MARK: Public methods
 func rangeOfRanges<C: Collection>(_ ranges: C) -> Range<Double>
     where C.Element == Range<Double> {
     guard !ranges.isEmpty else { return 0..<0 }
@@ -68,6 +72,7 @@ func magnitude(of range: Range<Double>) -> Double {
 
 #Preview {
     let hike = ModelData().hikes[0]
+    
     return Group {
         HikeGraph(hike: hike, path: \.elevation)
             .frame(height: 200)

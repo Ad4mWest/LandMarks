@@ -5,8 +5,10 @@
 import SwiftUI
 
 struct TextSubtitle: View {
+    // MARK: Public Properties
     var textSubtitleModel: TextSubtitleModel
     
+    // MARK: Lifecycle
     var body: some View {
         VStack(alignment: .leading) {
             Text("About " + textSubtitleModel.name)

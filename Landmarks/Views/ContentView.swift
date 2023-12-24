@@ -4,14 +4,17 @@
 
 import SwiftUI
 
+// MARK: Switcher
+enum Tab {
+    case featured
+    case list
+}
+
 struct ContentView: View {
+    // MARK: Private properties
     @State private var selection: Tab = .featured
     
-    enum Tab {
-        case featured
-        case list
-    }
-    
+    // MARK: Lifecycle
     var body: some View {
         TabView(selection: $selection) {
             CategoryHome()
@@ -23,10 +26,10 @@ struct ContentView: View {
             LandmarkList()
                 .tabItem {
                 Label("List", systemImage: "list.bullet")
+                        
             }
                 .tag(Tab.list)
         }
-        
     }
 }
 

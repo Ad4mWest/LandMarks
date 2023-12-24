@@ -4,13 +4,14 @@
 
 import CoreGraphics
 
+struct Segment {
+    let line: CGPoint
+    let curve: CGPoint
+    let control: CGPoint
+}
+
 struct HexagonParameters {
-    struct Segment {
-        let line: CGPoint
-        let curve: CGPoint
-        let control: CGPoint
-    }
-    
+    // MARK: Public Properties
     static let adjustment: CGFloat = 0.085
     
     static let segments = [

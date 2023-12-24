@@ -5,6 +5,7 @@
 import SwiftUI
 
 struct BadgeBackground: View {
+    // MARK: Lifecycle
     var body: some View {
         GeometryReader { geometry in
             Path { path in
@@ -28,7 +29,6 @@ struct BadgeBackground: View {
                             y: height * segment.line.y
                         )
                     )
-
 
                     path.addQuadCurve(
                         to: CGPoint(

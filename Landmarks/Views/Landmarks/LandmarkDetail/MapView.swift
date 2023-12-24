@@ -6,19 +6,22 @@ import SwiftUI
 import MapKit
 
 struct MapView: View {
+    // MARK: Public Properties
     var coordinate: CLLocationCoordinate2D
     
-    var body: some View {
-        Map(initialPosition: .region(region))
-    }
+    // MARK: Private properties
     private var region: MKCoordinateRegion {
-        get {
-          return MKCoordinateRegion(
+        MKCoordinateRegion(
                 center: coordinate,
                 span: MKCoordinateSpan(latitudeDelta: 0.2, longitudeDelta: 0.2)
             )
-        }
     }
+    
+    // MARK: Lifecycle
+    var body: some View {
+        Map(initialPosition: .region(region))
+    }
+    
 }
 
 #Preview {

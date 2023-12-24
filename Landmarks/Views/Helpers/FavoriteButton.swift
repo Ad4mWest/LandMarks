@@ -5,8 +5,10 @@
 import SwiftUI
 
 struct FavoriteButton: View {
+    // MARK: Public Properties
     @Binding var isSet: Bool
     
+    // MARK: Lifecycle
     var body: some View {
         Button {
             isSet.toggle()

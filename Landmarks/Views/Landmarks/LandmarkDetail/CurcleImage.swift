@@ -5,8 +5,10 @@
 import SwiftUI
 
 struct CurcleImage: View {
+    // MARK: Public Properties
     var image: Image
     
+    // MARK: Lifecycle
     var body: some View {
         image
             .clipShape(Circle())

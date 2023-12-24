@@ -5,8 +5,8 @@
 import SwiftUI
 
 struct LandmarkList: View {
-    @Environment(ModelData.self) var modelData 
-    @State private var showFavoritesOnly = false
+    // MARK: Public Properties
+    @Environment(ModelData.self) var modelData
     
     var filteredLandmarks: [Landmark] {
         modelData.landmarks.filter { landmark in
@@ -14,6 +14,10 @@ struct LandmarkList: View {
         }
     }
     
+    // MARK: Private properties
+    @State private var showFavoritesOnly = false
+    
+    // MARK: Lifecycle
     var body: some View {
         NavigationSplitView {
             List {

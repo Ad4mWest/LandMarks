@@ -1,8 +1,12 @@
 //  Hike.swift
 //  Landmarks
 //  Created by Adam West on 23.12.2023.
+//  Hike.swift
+//  Hike
+//  Created by Adam West on 22.12.2023.
 
 import Foundation
+
 
 struct Hike: Codable, Hashable, Identifiable {
     var id: Int
@@ -12,18 +16,16 @@ struct Hike: Codable, Hashable, Identifiable {
     var observations: [Observation]
 
     static var formatter = LengthFormatter()
-
     var distanceText: String {
         Hike.formatter
             .string(fromValue: distance, unit: .kilometer)
     }
-
-
+    
     struct Observation: Codable, Hashable {
         var distanceFromStart: Double
-
         var elevation: Range<Double>
         var pace: Range<Double>
         var heartRate: Range<Double>
     }
+
 }

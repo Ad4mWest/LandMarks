@@ -5,8 +5,10 @@
 import SwiftUI
 
 struct CategoryItem: View {
+    // MARK: Public Properties
     var landmark: Landmark
     
+    // MARK: Lifecycle
     var body: some View {
         VStack(alignment: .leading) {
             landmark.image

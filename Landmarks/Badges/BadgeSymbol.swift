@@ -1,15 +1,14 @@
-//
 //  BadgeSymbol.swift
 //  Landmarks
-//
 //  Created by Adam West on 23.12.2023.
-//
 
 import SwiftUI
 
 struct BadgeSymbol: View {
+    // MARK: Public Properties
     static let symbolColor = Color(red: 79.0 / 255, green: 79.0 / 255, blue: 191.0 / 255)
     
+    // MARK: Lifecycle
     var body: some View {
         GeometryReader { geometry in
             Path { path in

@@ -5,6 +5,7 @@
 import SwiftUI
 
 extension AnyTransition {
+    // MARK: MoveAndFade
     static var moveAndFade: AnyTransition {
         .asymmetric(
             insertion: .move(edge: .trailing).combined(with: .opacity),
@@ -13,9 +14,13 @@ extension AnyTransition {
 }
 
 struct HikeView: View {
+    // MARK: Public Properties
     var hike: Hike
+    
+    // MARK: Private properties
     @State private var showDetail = false
 
+    // MARK: Lifecycle
     var body: some View {
         VStack {
             HStack {

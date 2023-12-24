@@ -5,8 +5,10 @@
 import SwiftUI
 
 struct LandmarkRow: View {
+    // MARK: Public Properties
     var landmark: Landmark
     
+    // MARK: Lifecycle
     var body: some View {
         HStack {
             landmark.image
@@ -28,10 +30,3 @@ struct LandmarkRow: View {
 #Preview("Salmon") {
     LandmarkRow(landmark: ModelData().landmarks[0])
 }
-
-//#Preview("Turtle Rock") { // Можно указывать названия превью
-//    Group { // Совмещать слои представления 
-//        LandmarkRow(landmark: landmarks[0])
-//        LandmarkRow(landmark: landmarks[1])
-//    }
-//}

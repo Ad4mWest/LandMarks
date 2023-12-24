@@ -5,15 +5,16 @@
 import SwiftUI
 
 struct TextTitle: View {
+    // MARK: Public Properties
     @Environment(ModelData.self) var modelData
-    var landmark: Landmark
     
+    var landmark: Landmark
+    var textTitleModel: TextTitleModel
     var landmarkIndex: Int {
         modelData.landmarks.firstIndex(where: { $0.id == landmark.id })!
     }
     
-    var textTitleModel: TextTitleModel
-    
+    // MARK: Lifecycle
     var body: some View {
         @Bindable var modelData = modelData
         
@@ -35,8 +36,6 @@ struct TextTitle: View {
 }
 
 #Preview {
-    let modelData = ModelData()
-    
-    return TextTitle(landmark: ModelData().landmarks[0], textTitleModel: TextTitleModel(name: "Turtle Rock", place: "Joshua Tree National Park", state: "California"))
-        .environment(modelData)
+    TextTitle(landmark: ModelData().landmarks[0], textTitleModel: TextTitleModel(name: "Turtle Rock", place: "Joshua Tree National Park", state: "California"))
+        .environment(ModelData())
 }

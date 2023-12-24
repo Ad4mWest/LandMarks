@@ -6,6 +6,7 @@ import SwiftUI
 import MapKit
 
 struct LandmarkDetail: View {
+    // MARK: Public Properties
     @Environment(ModelData.self) var modelData
     
     var landmark: Landmark
@@ -15,6 +16,7 @@ struct LandmarkDetail: View {
     var textTitleModel: TextTitleModel
     var textSubtitleModel: TextSubtitleModel
     
+    // MARK: Lifecycle
     var body: some View {
         ScrollView {
             MapView(coordinate: coordinate)

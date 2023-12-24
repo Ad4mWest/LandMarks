@@ -1,16 +1,15 @@
-//
 //  CategoryRow.swift
 //  Landmarks
-//
 //  Created by Adam West on 24.12.2023.
-//
 
 import SwiftUI
 
 struct CategoryRow: View {
+    // MARK: Public Properties
     var categoryName: String
     var items: [Landmark]
     
+    // MARK: Lifecycle
     var body: some View {
         Text(categoryName)
             .font(.headline)

@@ -2,12 +2,13 @@
 //  Landmarks
 //  Created by Adam West on 22.12.2023.
 
-import Foundation
+import SwiftUI
 
-@Observable
+@Observable 
 class ModelData {
     var landmarks: [Landmark] = load("landmarkData.json")
     var hikes: [Hike] = load("hikeData.json")
+    var profile = Profile.default
     
     var featured: [Landmark] {
         landmarks.filter { $0.isFeatured }

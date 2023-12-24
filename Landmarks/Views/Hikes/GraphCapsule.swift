@@ -5,6 +5,7 @@
 import SwiftUI
 
 struct GraphCapsule: View, Equatable {
+    // MARK: Public Properties
     var index: Int
     var color: Color
     var height: CGFloat
@@ -19,6 +20,7 @@ struct GraphCapsule: View, Equatable {
         CGFloat((range.lowerBound - overallRange.lowerBound) / magnitude(of: overallRange))
     }
 
+    // MARK: Lifecycle
     var body: some View {
         Capsule()
             .fill(color)
