@@ -1,10 +1,10 @@
-//  CurcleImage.swift
+//  CircleImage.swift
 //  Landmarks
 //  Created by Adam West on 21.12.2023.
 
 import SwiftUI
 
-struct CurcleImage: View {
+struct CircleImage: View {
     // MARK: Public Properties
     var image: Image
     
@@ -20,5 +20,5 @@ struct CurcleImage: View {
 }
 
 #Preview {
-    CurcleImage(image: Image("icybay"))
+    CircleImage(image: Image("icybay"))
 }

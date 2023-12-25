@@ -21,7 +21,7 @@ struct LandmarkDetail: View {
         ScrollView {
             MapView(coordinate: coordinate)
                 .frame(height: 300)
-            CurcleImage(image: image)
+            CircleImage(image: image)
                 .offset(y: -130)
                 .padding(.bottom, -130)
            
