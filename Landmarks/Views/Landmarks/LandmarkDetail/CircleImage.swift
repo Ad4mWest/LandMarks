@@ -1,12 +1,16 @@
-//  ImageApple.swift
+//  CircleImage.swift
 //  Landmarks
 //  Created by Adam West on 21.12.2023.
 
 import SwiftUI
 
-struct ImageApple: View {
+struct CircleImage: View {
+    // MARK: Public Properties
+    var image: Image
+    
+    // MARK: Lifecycle
     var body: some View {
-        Image("turtlerock")
+        image
             .clipShape(Circle())
             .overlay {
                 Circle().stroke(.white, lineWidth: 4)
@@ -16,5 +20,5 @@ struct ImageApple: View {
 }
 
 #Preview {
-    ImageApple()
+    CircleImage(image: Image("icybay"))
 }

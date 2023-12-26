@@ -1,8 +1,9 @@
 {
   "images" : [
     {
+      "filename" : "landmark_app_icon_1024x1024.png",
       "idiom" : "universal",
-      "platform" : "ios",
+      "platform" : "watchos",
       "size" : "1024x1024"
     }
   ],
